@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon GBA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-wrapper">
+    <canvas id="gameCanvas" width="500" height="500"></canvas>
+    <!-- HUD -->
+    <div id="hud">
+      <div id="hud-left">
+        <span id="location-name">Pueblo Paleta</span>
+      </div>
+      <div id="hud-right">
+        <span id="money">💰 500</span>
+      </div>
+    </div>
+    <!-- Battle Screen -->
+    <div id="battle-screen" class="hidden">
+      <div id="battle-field">
+        <div id="enemy-area">
+          <div id="enemy-info">
+            <span id="enemy-name">???</span>
+            <span id="enemy-level">Nv.5</span>
+            <div class="hp-bar-container"><div id="enemy-hp-bar"></div></div>
+          </div>
+          <div id="enemy-sprite">🔴</div>
+        </div>
+        <div id="player-area">
+          <div id="player-sprite">🔵</div>
+          <div id="player-info">
+            <span id="player-poke-name">Bulbasaur</span>
+            <span id="player-poke-level">Nv.5</span>
+            <div class="hp-bar-container"><div id="player-hp-bar"></div></div>
+            <span id="player-hp-text">20/20</span>
+          </div>
+        </div>
+      </div>
+      <div id="battle-log">¡Un Pokémon salvaje apareció!</div>
+      <div id="battle-menu">
+        <div id="fight-menu" class="hidden">
+          <button class="move-btn" data-move="0"></button>
+          <button class="move-btn" data-move="1"></button>
+          <button class="move-btn" data-move="2"></button>
+          <button class="move-btn" data-move="3"></button>
+        </div>
+        <div id="main-menu">
+          <button id="btn-fight">⚔️ LUCHAR</button>
+          <button id="btn-bag">🎒 MOCHILA</button>
+          <button id="btn-pokemon">🔴 POKÉMON</button>
+          <button id="btn-run">🏃 HUIR</button>
+        </div>
+      </div>
+    </div>
+    <!-- Menu Screen -->
+    <div id="start-menu" class="hidden">
+      <div class="menu-title">MENÚ</div>
+      <button class="menu-item" id="menu-pokedex">📖 Pokédex</button>
+      <button class="menu-item" id="menu-pokemon">🔴 Pokémon</button>
+      <button class="menu-item" id="menu-bag">🎒 Mochila</button>
+      <button class="menu-item" id="menu-save">💾 Guardar</button>
+      <button class="menu-item" id="menu-close">✖ Cerrar</button>
+    </div>
+    <!-- Bag Screen -->
+    <div id="bag-screen" class="hidden">
+      <div class="screen-title">🎒 MOCHILA</div>
+      <div id="bag-tabs">
+        <button class="tab-btn active" data-tab="items">Objetos</button>
+        <button class="tab-btn" data-tab="balls">Poké Balls</button>
+        <button class="tab-btn" data-tab="tms">MTs</button>
+      </div>
+      <div id="bag-list"></div>
+      <button id="bag-close">Cerrar</button>
+    </div>
+    <!-- Pokémon Party Screen -->
+    <div id="party-screen" class="hidden">
+      <div class="screen-title">🔴 POKÉMON</div>
+      <div id="party-list"></div>
+      <button id="party-close">Cerrar</button>
+    </div>
+    <!-- Pokédex Screen -->
+    <div id="pokedex-screen" class="hidden">
+      <div class="screen-title">📖 POKÉDEX</div>
+      <div id="pokedex-list"></div>
+      <button id="pokedex-close">Cerrar</button>
+    </div>
+    <!-- Dialog Box -->
+    <div id="dialog-box" class="hidden">
+      <div id="dialog-text"></div>
+      <span id="dialog-arrow">▼</span>
+    </div>
+    <!-- Controls hint -->
+    <div id="controls-hint">
+      Flechas: Mover | Enter: Acción | X: Menú | Esc: Cerrar
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
